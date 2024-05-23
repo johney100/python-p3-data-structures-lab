@@ -17,22 +17,42 @@ spicy_foods = [
 ]
 
 def get_names(spicy_foods):
-    pass
+    names = []
+    for food in spicy_foods:
+        names.append(food["name"])
+    return names
 
 def get_spiciest_foods(spicy_foods):
-    pass
+    spiciest = []
+    for food in spicy_foods:
+      if food["heat_level"] > 5:
+        spiciest.append(food["name"])
+    return spiciest
 
 def print_spicy_foods(spicy_foods):
-    pass
+  for food in spicy_foods:
+    num_peppers = int(food["heat_level"] / 3)  
+    pepper_string = "" * num_peppers  
+    print(f"{food['name']} ({food['cuisine']}) | Heat Level: {pepper_string}")
 
 def get_spicy_food_by_cuisine(spicy_foods, cuisine):
-    pass
+    cuisine_food_dict = {food["cuisine"]: food.copy() for food in spicy_foods}
+    return cuisine_food_dict
 
 def print_spiciest_foods(spicy_foods):
-    pass
+    for food in spicy_foods:
+    num_peppers = int(food["heat_level"] / 3)  
+    pepper_string = "" * num_peppers
+            if  num_peppers > 5 : 
+            print(f"{food['name']} ({food['cuisine']}) | Heat Level: {pepper_string}")
 
 def get_average_heat_level(spicy_foods):
-    pass
+    new_list = []
+    for food in spicy_foods:
+      heat_average = int(food["heat_level"])
+      new_list.append(heat_average)
+    return sum(new_list) / len(new_list) 
 
 def create_spicy_food(spicy_foods, spicy_food):
-    pass
+    spicy_foods.append(spicy_food)
+    return spicy_foods
